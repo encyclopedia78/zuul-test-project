@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+    - name: Fuehre den Zuul Studium Test aus
+      ansible.builtin.command: echo "Hallo encyclopedia78! Zuul funktioniert einwandfrei!"
