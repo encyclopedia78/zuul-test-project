@@ -1,0 +1,24 @@
+- pipeline:
+    name: check
+    manager: independent
+    trigger:
+      github:
+        - event: pull_request
+          action:
+            - opened
+            - synchronize
+    success:
+      github:
+        status: 'success'
+    failure:
+      github:
+        status: 'failure'
+
+- job:
+    name: mein-erstes-studium-skript
+    run: playbooks/test-run.yaml
+
+- project:
+    check:
+      jobs:
+        - mein-erstes-studium-skript
